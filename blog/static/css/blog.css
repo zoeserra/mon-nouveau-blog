@@ -1,0 +1,104 @@
+.page-header {
+    background-color: #C25100;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+}
+ 
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+ 
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Lobster', cursive;
+}
+ 
+.date {
+    color: #828282;
+}
+ 
+.save {
+    float: right;
+}
+ 
+.post-form textarea,
+.post-form input {
+    width: 100%;
+}
+
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+ 
+.post {
+    margin-bottom: 70px;
+}
+ 
+.post h2 a,
+.post h2 a:visited {
+    color: #000000;
+}
+ 
+.post > .date,
+.post > .actions {
+    float: right;
+}
+ 
+.btn-default,
+.btn-default:visited {
+    color: #C25100;
+    background: none;
+    border-color: #C25100;
+}
+ 
+.btn-default:hover {
+    color: #FFFFFF;
+    background-color: #C25100;
+}
+
+
+ul {
+    border: 2px solid #000; /* Bordure noire autour de la liste */
+    padding: 10px; /* Espacement intérieur pour aérer les éléments */
+    list-style-type: disc; /* Affiche les puces */
+}
+
+ul li {
+    margin-bottom: 8px; /* Espace entre les éléments de la liste */
+}
+
+.d-flex {
+    display: flex; /* Flexbox */
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+}
+
+/* Améliorer l'espacement entre les éléments de la liste */
+.card-body ul li {
+    margin-bottom: 10px; /* Espacement entre les éléments */
+    font-size: 1.1em; /* Légèrement plus grand pour la lisibilité */
+}
+
+/* Ajouter un peu de padding et de bordure */
+.card-body {
+    padding: 20px;
+}
+
+
+.card-img {
+    width: 100%;         /* Largeur à 100% du conteneur */
+    height: 200px;       /* Hauteur fixe pour l'image */
+    object-fit: cover;   /* L'image sera recadrée si elle est plus grande que le conteneur */
+}

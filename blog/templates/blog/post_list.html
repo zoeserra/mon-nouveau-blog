@@ -1,0 +1,65 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <!-- Tableau des personnages -->
+    <div class="container my-4 fond-vert">
+        <h1 style="color: white; text-align: center;">Membres</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Modifier</th>
+                    <th>État</th>
+                    <th>Lieu</th>
+                    <th>Photo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for character in characters %}
+                    <tr>
+                        <td><a href="{% url 'post_detail' pk=character.pk %}">{{ character.id_character }}</a></td>
+                        <td><a href="{% url 'character_detail' id_character=character.id_character %}">Lieu</a></td>
+                        <td>{{ character.etat }}</td>
+                        <td>{{ character.lieu }}</td>
+                        <td>
+                            {% if character.photo %}
+                                <img src="{{ character.photo.url }}" alt="Photo de {{ character.id_character }}" style="width: 100px; height: auto;">
+                            {% else %}
+                                Pas de photo
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Tableau des équipements -->
+    <div class="container my-4 fond-vert">
+        <h1 style="color: white; text-align: center;">Pièces</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Disponibilité</th>
+                    <th>Photo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for equipement in equipements %}
+                    <tr>
+                        <td>{{ equipement.id_equip }}</td>
+                        <td>{{ equipement.disponibilite }}</td>
+                        <td>
+                            {% if equipement.photo %}
+                                <img src="{{ equipement.photo.url }}" alt="Photo de {{ equipement.id_equip }}" style="width: 100px; height: auto;">
+                            {% else %}
+                                Pas de photo
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

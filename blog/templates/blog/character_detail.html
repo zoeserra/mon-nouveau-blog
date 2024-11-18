@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page-header">
+    <h1>
+        {{ character.id_character }}
+    </h1>
+    {% if message != '' %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+    {% endif %}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <b>Changer le lieu :</b>
+        {{ form.lieu }}
+        <button type="submit" class="btn btn-primary">OK</button>
+        <a href="{% url 'post_list' %}" class="btn btn-secondary">Back</a>
+    </form>
+</div>
+{% endblock %}

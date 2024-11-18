@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="card text-center" style="width: 18rem;">
+    <!-- Affichage de la photo -->
+    {% if character.photo %}
+    <img alt="Photo de {{ character.id_character }}" src="{{ character.photo.url }}" class="card-img card-img-top">
+    {% else %}
+    <p class="text-center">Aucune photo disponible</p>
+    {% endif %}
+
+    <div class="card-body fond-vert">
+        <div class="border border-primary p-3">
+            <h3 class="card-title">{{ character.id_character }}</h3>
+        </div>
+        <div class="shadow-sm p-3 text-primary">
+            <ul class="border border-primary p-3 list-unstyled">
+                <li><strong>Etat :</strong> {{ character.etat }}</li>
+                <li><strong>Lieu :</strong> {{ character.lieu }}</li>
+                <li><strong>Origine :</strong> {{ character.origine }}</li>
+                <li><strong>Sport :</strong> {{ character.sport }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
